@@ -1,0 +1,21 @@
+#receipt{
+    padding: 5em;
+    background-color: whitesmoke;
+    margin: 5em;
+}
+
+#Apples{
+    display: none;
+}
+
+#Oranges{
+    display: none;
+}
+
+#Bananas{
+    display: none;
+}
+
+#order{
+    float: right;
+}

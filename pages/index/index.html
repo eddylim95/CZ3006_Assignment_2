@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="packages/bootstrap-4.0.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="packages/fontawesome-free-5.8.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="pages/index/index.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1>
+                        CZ3006 Grocery Store
+                    </h1>
+                    <p>
+                        This is a Grocery store that is operated under code: CZ3006 Net-centric Programming.
+                        <b>CZ3006 Grocery Store comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable
+                            law.</b>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row" id="name">
+            <div class="col-md-12">
+                <p>
+                    <span>
+                        Enter your name:
+                    </span>
+                    <input type="text" placeholder="John Doe" id="username" onchange="showName();">
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="Apples">
+                    <h5 class="card-header">
+                        Apples
+                    </h5>
+                    <div class="card-body">
+                        <img alt="Apples" src="../../assets/apple.png" data-toggle="tooltip" data-placement="bottom"
+                            title="Juicy Apples!" />
+                    </div>
+                    <div class="card-footer">
+                        <span>69¢ Each</span>
+                        <span>Total Price:</span>
+                        <p id="price">
+                            $0.00
+                        </p>
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-success btn-sm"
+                                onclick="changeQty('#Apples', 1);"><i class="fas fa-angle-up"></i></button>
+                            <input type="text" type="number" value="0" id="qty" onchange="onQtyChange('#Apples');">
+                            <button type="button" class="btn btn-outline-danger btn-sm"
+                                onclick="changeQty('#Apples', -1);"><i class="fas fa-angle-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="Oranges">
+                    <h5 class="card-header">
+                        Oranges
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <img alt="Oranges" src="../../assets/orange.png" data-toggle="tooltip" data-placement="bottom"
+                                title="Zesty Oranges!" />
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        59¢ Each
+                        <span>Total Price:</span>
+                        <p id="price">
+                            $0.00
+                        </p>
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-success btn-sm"
+                                onclick="changeQty('#Oranges', 1);"><i class="fas fa-angle-up"></i></button>
+                            <input type="text" type="number" value="0" id="qty" onchange="onQtyChange('#Oranges');">
+                            <button type="button" class="btn btn-outline-danger btn-sm"
+                                onclick="changeQty('#Oranges', -1);"><i class="fas fa-angle-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="Bananas">
+                    <h5 class="card-header">
+                        Bananas
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <img alt="Bananas" src="../../assets/banana.png" data-toggle="tooltip" data-placement="bottom"
+                                title="Big Bananas!" />
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        39¢ Each
+                        <span>Total Price:</span>
+                        <p id="price">
+                            $0.00
+                        </p>
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-success btn-sm"
+                                onclick="changeQty('#Bananas', 1);"><i class="fas fa-angle-up"></i></button>
+                            <input type="text" type="number" value="0" id="qty" onchange="onQtyChange('#Bananas');">
+                            <button type="button" class="btn btn-outline-danger btn-sm"
+                                onclick="changeQty('#Bananas', -1);"><i class="fas fa-angle-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="jumbotron" id="checkout">
+            <h1>Checkout</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover table-sm table-striped" id="receiptTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Fruit
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-sm" id="Apples">
+                                <td id="fruit">
+                                    Apples
+                                </td>
+                                <td id="qty">
+                                    0
+                                </td>
+                                <td id="price">
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr class="table-sm" id="Oranges">
+                                <td id="fruit">
+                                    Oranges
+                                </td>
+                                <td id="qty">
+                                    0
+                                </td>
+                                <td id="price">
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr class="table-sm" id="Bananas">
+                                <td id="fruit">
+                                    Bananas
+                                </td>
+                                <td id="qty">
+                                    0
+                                </td>
+                                <td id="price">
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr class="table-sm bg-dark text-white" id="receiptTablePrice">
+                                <td>
+                                    Total Price:
+                                </td>
+                                <td>
+                                </td>
+                                <td id="totalPrice">
+                                    $0.00
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="paymentPage">
+        <div class="row">
+            <div class="col-md-12" id="payment">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="Visa" onclick="enablePayment('Visa');">
+                    <label class="form-check-label" for="inlineRadio1"><i class="fab fa-cc-visa"></i> Visa
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="MasterCard" onclick="enablePayment('MasterCard');">
+                    <label class="form-check-label" for="inlineRadio2"><i class="fab fa-cc-mastercard"></i>
+                        MasterCard</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                        value="Discover" onclick="enablePayment('Discover');">
+                    <label class="form-check-label" for="inlineRadio3"><i class="fab fa-cc-discover"></i>
+                        Discover </label>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="alert-success">
+            <div class="col-md-12">
+                <div class="alert alert-success alert-dismissable">
+                    Order Received!
+                </div>
+            </div>
+        </div>
+        <div class="row" id="alert-danger">
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissable">
+                    No items selected for checkout!
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <a href="receipt.php">
+                    <button type="button" class="btn btn-primary" id="receipt">
+                        Check Receipt
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success" id="submit" onclick="submit();" disabled>
+                    Submit Order
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="packages/jquery-3.3.1.js"></script>
+    <script src="packages/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="pages/index/index.js"></script>
+</body>
+
+</html>
