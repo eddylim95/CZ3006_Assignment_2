@@ -1,5 +1,5 @@
 <?php
-require "order.php";
+require "./order.php";
 
 // Gets order from HTTP POST
 $orderResponseTaker = new OrderResponseTaker();

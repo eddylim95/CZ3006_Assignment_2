@@ -1,3 +1,3 @@
 <?php
-include "pages/receipt/receipt.html";
+include("./pages/receipt/receipt.html");
 ?>

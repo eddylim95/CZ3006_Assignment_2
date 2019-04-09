@@ -1,3 +1,3 @@
 <?php
-include("pages/index/index.html");
+include("./pages/index/index.html");
 ?>
