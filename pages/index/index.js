@@ -120,7 +120,7 @@ function postToPhp() {
     sessionStorage.setItem('username', username)
 
     // HTTP post
-    $.post("/request.php", {
+    $.post("./request.php", {
             username: username,
             apple: appleQty,
             orange: orangeQty,
